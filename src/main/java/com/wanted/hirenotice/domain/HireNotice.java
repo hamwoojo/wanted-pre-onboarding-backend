@@ -1,9 +1,7 @@
 package com.wanted.hirenotice.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,6 +9,7 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class HireNotice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
