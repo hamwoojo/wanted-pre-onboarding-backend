@@ -52,9 +52,8 @@ class HireNoticeControllerTest {
         hireNoticeUpdateDTO.setTechStack("자바스크립트");
 
         Long hireNoticeId = id;
-        HireNotice savedHireNotice = hireNoticeService.findById(hireNoticeId);
 
-        HireNotice updatedHireNotice = hireNoticeService.update(savedHireNotice, hireNoticeUpdateDTO);
+        HireNotice updatedHireNotice = hireNoticeService.update(hireNoticeId, hireNoticeUpdateDTO);
 
         assertThat(updatedHireNotice.getHirePosition()).isEqualTo(hireNoticeUpdateDTO.getHirePosition());
         assertThat(updatedHireNotice.getHirePosition()).isEqualTo("프론트 개발자");

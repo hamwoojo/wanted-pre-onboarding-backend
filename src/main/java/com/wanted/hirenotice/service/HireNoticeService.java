@@ -32,7 +32,9 @@ public class HireNoticeService {
     }
 
 
-    public HireNotice update(HireNotice savedHireNotice, HireNoticeUpdateDTO hireNoticeUpdateDTO) {
+    public HireNotice update(Long id, HireNoticeUpdateDTO hireNoticeUpdateDTO) {
+
+        HireNotice savedHireNotice = findById(id);
 
         Optional.ofNullable(hireNoticeUpdateDTO.getCorporationName())
                 .filter(s -> !s.isEmpty())

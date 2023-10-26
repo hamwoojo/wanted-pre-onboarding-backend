@@ -20,10 +20,9 @@ public class HireNoticeController {
         HireNotice hireNotice = hireNoticeService.save(hireNoticeSaveDTO);
         return ResponseEntity.ok(hireNotice);
     }
-    @PatchMapping("{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<HireNotice> update(@PathVariable Long id, @RequestBody HireNoticeUpdateDTO hireNoticeUpdateDTO){
-        HireNotice savedHireNotice = hireNoticeService.findById(id);
-        HireNotice hireNotice = hireNoticeService.update(savedHireNotice,hireNoticeUpdateDTO);
+        HireNotice hireNotice = hireNoticeService.update(id,hireNoticeUpdateDTO);
         return ResponseEntity.ok(hireNotice);
     }
     @GetMapping
@@ -31,7 +30,7 @@ public class HireNoticeController {
         List<HireNotice> hireNotices = hireNoticeService.findAll();
         return ResponseEntity.ok(hireNotices);
     }
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         hireNoticeService.delete(id);
         return ResponseEntity.ok(id+"가 삭제 되었습니다.");
