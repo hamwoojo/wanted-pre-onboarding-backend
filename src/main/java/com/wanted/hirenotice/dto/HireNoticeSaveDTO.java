@@ -20,14 +20,14 @@ public class HireNoticeSaveDTO {
     @NotNull
     private String techStack;
 
-    public HireNotice toEntity(HireNoticeSaveDTO hireNoticeSaveDTO){
+    public HireNotice toEntity(){
         return HireNotice.builder()
-                .corporationName(hireNoticeSaveDTO.corporationName)
-                .nation(hireNoticeSaveDTO.nation)
-                .region(hireNoticeSaveDTO.region)
-                .hirePosition(hireNoticeSaveDTO.hirePosition)
-                .hireCompensation(hireNoticeSaveDTO.hireCompensation)
-                .techStack(hireNoticeSaveDTO.techStack)
+                .corporationName(corporationName)
+                .nation(nation)
+                .region(region)
+                .hirePosition(hirePosition)
+                .hireCompensation(hireCompensation)
+                .techStack(techStack)
                 .build();
     }
 }

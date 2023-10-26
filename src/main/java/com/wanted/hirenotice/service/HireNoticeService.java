@@ -16,7 +16,7 @@ import java.util.Optional;
 public class HireNoticeService {
     private final HireNoticeRepository hireNoticeRepository;
     public HireNotice save(HireNoticeSaveDTO hireNoticeSaveDTO) {
-        return hireNoticeRepository.save(hireNoticeSaveDTO.toEntity(hireNoticeSaveDTO));
+        return hireNoticeRepository.save(hireNoticeSaveDTO.toEntity());
     }
 
     public HireNotice save(HireNotice hireNotice) {
